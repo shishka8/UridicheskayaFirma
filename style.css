@@ -1,0 +1,284 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100% !important;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background-color: #828282;
+}
+
+/* ОБЕРТКА - ГЛАВНЫЙ ДВИГАТЕЛЬ */
+.wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 100vh !important; /* Используем vh для гарантии высоты экрана */
+}
+
+/* ШАПКА */
+.main-header {
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%; /* Увеличили отступы по бокам */
+    min-height: 90px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Лого */
+.logo-area { display: flex; align-items: center; gap: 15px; flex: 1; }
+.logo-area img { height: 60px; }
+.logo-text { font-weight: 600; font-size: 15px; color: #444; line-height: 1.2; max-width: 150px; }
+
+/* Рейтинг в центре */
+.header-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.rating-badge {
+    background: #fdfdfd;
+    padding: 5px 15px;
+    border-radius: 8px;
+    border: 1px solid #f0f0f0;
+}
+
+.rating-val { font-weight: bold; font-size: 20px; color: #333; margin-right: 5px; }
+.stars { color: #f1b06d; font-size: 18px; letter-spacing: 2px; }
+.rating-label { font-size: 10px; color: #999; text-transform: uppercase; margin-top: 2px; }
+
+/* Контакты справа */
+.info-area {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.messenger-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    font-size: 11px;
+    font-weight: bold;
+}
+.wa { color: #25D366; cursor: pointer; }
+.tg { color: #0088cc; cursor: pointer; }
+
+.phone-block { text-align: right; }
+.phone { 
+    font-weight: 800; 
+    font-size: 20px; 
+    color: #c34a16; /* Сделали акцент на телефоне */
+    text-decoration: none; 
+}
+.hotline { font-size: 11px; color: #666; letter-spacing: 1px; }
+
+/* НАВИГАЦИЯ */
+.main-nav {
+    background: white;
+    border-bottom: 4px solid #919191;
+    padding: 12px 0;
+    flex-shrink: 0;
+}
+
+.main-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 15px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+/* ЦЕНТРАЛЬНАЯ ЧАСТЬ */
+.hero { 
+    padding: 50px 5%; 
+    flex-grow: 1 !important; /* Это выталкивает футер вниз */
+    display: flex;
+    justify-content: center;
+}
+
+.hero-content { 
+    display: flex; 
+    justify-content: space-between; 
+    gap: 40px; 
+    width: 100%;
+    max-width: 1200px; /* Собирает контент в центре */
+}
+
+.hero-left { 
+    flex: 1.5; 
+    background: #595959; 
+    padding: 60px 40px; 
+    color: white; 
+    text-align: center;
+    align-self: flex-start; /* Не дает блоку растягиваться вниз */
+}
+
+.hero-left h1 { font-size: 55px; text-transform: uppercase; margin-bottom: 20px; }
+
+.cta-button { 
+    background-color: #c34a16; 
+    color: white; 
+    padding: 15px 30px; 
+    border: none; 
+    font-weight: bold; 
+    cursor: pointer; 
+    margin-top: 20px; 
+}
+
+.hero-right { 
+    flex: 1; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 20px; 
+    max-width: 400px;
+}
+
+.card { 
+    background: #262626; 
+    color: white; 
+    padding: 25px; 
+    border-radius: 40px; 
+    text-align: center; 
+    border-bottom: 4px solid #c34a16; 
+}
+
+/* ФУТЕР */
+.main-footer {
+    background-color: #262626;
+    color: white;
+    padding: 40px 5% 20px;
+    flex-shrink: 0; /* Не дает футеру сжиматься */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-bottom { 
+    text-align: center; 
+    border-top: 1px solid #444; 
+    padding-top: 20px; 
+    margin-top: 20px;
+    font-size: 12px; 
+    color: #888; 
+}
+/* МОДАЛЬНОЕ ОКНО */
+.modal-overlay {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #595959; /* Темно-серый фон как на макете */
+    width: 900px;
+    max-width: 95%;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.modal-body {
+    display: flex;
+    min-height: 500px;
+}
+
+/* Левая часть с картинкой */
+.modal-image-side {
+    flex: 1;
+    /* Укажи здесь точное название своего файла */
+    background: url('columns-bg.png') no-repeat center center; 
+    background-size: cover; /* Картинка заполнит всю левую область */
+    position: relative;
+    border-right: 1px solid rgba(255, 255, 255, 0.1); /* Тонкая линия разделения */
+}
+
+/* Добавим легкое затемнение поверх картинки, чтобы она была в стиле макета */
+.modal-image-side::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.2); 
+}
+
+/* Правая часть с формой */
+.modal-form-side {
+    flex: 1.2;
+    padding: 40px;
+    color: white;
+    text-align: center;
+}
+
+.modal-logo { height: 135px; margin-bottom: 20px; }
+
+.modal-form-side h2 { font-size: 22px; font-weight: 300; margin-bottom: 15px; }
+.modal-form-side hr { border: 0; border-top: 1px solid #999; margin-bottom: 30px; }
+
+.input-group { text-align: left; margin-bottom: 20px; }
+.input-group label { display: block; margin-bottom: 5px; font-size: 14px; }
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: transparent;
+    border: 2px solid #c34a16;
+    color: #c34a16;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.submit-btn:hover { background: #c34a16; color: white; }
+
+.close-modal {
+    position: absolute;
+    top: 15px; right: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.disclaimer { font-size: 10px; color: #bbb; margin-top: 15px; }
+.disclaimer a { color: #bbb; }
+
+input[placeholder="Ваше имя"]::first-letter {
+    text-transform: uppercase;
+}
+/* Или просто для всего поля, если хочешь гарантировать стиль */
+input[placeholder="Ваше имя"] {
+    text-transform: capitalize; 
+}
