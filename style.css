@@ -17,7 +17,7 @@ body {
 .wrapper {
     display: flex !important;
     flex-direction: column !important;
-    min-height: 100vh !important; /* Используем vh для гарантии высоты экрана */
+    min-height: 100vh !important; /* Использую vh для гарантии высоты экрана */
 }
 
 /* ШАПКА */
@@ -26,7 +26,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 5%; /* Увеличили отступы по бокам */
+    padding: 10px 5%; /* Увеличил отступы по бокам */
     min-height: 90px;
     border-bottom: 1px solid #eee;
 }
@@ -78,7 +78,7 @@ body {
 .phone { 
     font-weight: 800; 
     font-size: 20px; 
-    color: #c34a16; /* Сделали акцент на телефоне */
+    color: #c34a16; /* Сделал акцент на телефоне */
     text-decoration: none; 
 }
 .hotline { font-size: 11px; color: #666; letter-spacing: 1px; }
@@ -108,7 +108,7 @@ body {
 /* ЦЕНТРАЛЬНАЯ ЧАСТЬ */
 .hero { 
     padding: 50px 5%; 
-    flex-grow: 1 !important; /* Это выталкивает футер вниз */
+    flex-grow: 1 !important; /*  выталкивает футер вниз */
     display: flex;
     justify-content: center;
 }
@@ -193,7 +193,7 @@ body {
 }
 
 .modal-content {
-    background: #595959; /* Темно-серый фон как на макете */
+    background: #595959; /* Темно-серый фон */
     width: 900px;
     max-width: 95%;
     border-radius: 5px;
@@ -209,14 +209,13 @@ body {
 /* Левая часть с картинкой */
 .modal-image-side {
     flex: 1;
-    /* Укажи здесь точное название своего файла */
     background: url('columns-bg.png') no-repeat center center; 
-    background-size: cover; /* Картинка заполнит всю левую область */
+    background-size: cover; 
     position: relative;
     border-right: 1px solid rgba(255, 255, 255, 0.1); /* Тонкая линия разделения */
 }
 
-/* Добавим легкое затемнение поверх картинки, чтобы она была в стиле макета */
+/* затемнение поверх картинки*/
 .modal-image-side::after {
     content: '';
     position: absolute;
@@ -278,7 +277,7 @@ body {
 input[placeholder="Ваше имя"]::first-letter {
     text-transform: uppercase;
 }
-/* Или просто для всего поля, если хочешь гарантировать стиль */
+
 input[placeholder="Ваше имя"] {
     text-transform: capitalize; 
 }

@@ -1,6 +1,6 @@
 // Находим элементы
 const modal = document.getElementById('modalOverlay');
-const btn = document.querySelector('.cta-button'); // Твоя оранжевая кнопка
+const btn = document.querySelector('.cta-button'); // оранжевая кнопка
 const closeBtn = document.querySelector('.close-modal');
 
 // Открываем при клике
